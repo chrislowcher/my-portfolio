@@ -1,0 +1,199 @@
+@import "tailwindcss";
+/* @import "tailwindcss-primeui";
+@import 'primeicons/primeicons.css'; */
+
+html{
+    scroll-behavior: smooth;
+}
+
+html, .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
+    font-feature-settings: "cv11" !important;
+    font-family: theme(--font-inter) !important;
+    scrollbar-color: var(--p-primary-500) rgba(1, 10, 8, 1);
+    scrollbar-width: thin;
+}
+
+.tiny5-regular {
+  font-family: "Tiny5", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@theme {
+    --font-inter: inter; 
+}
+
+:root {
+    --font-sans: theme(--font-inter);
+    --p-primary-50: var(--color-teal-50);
+    --p-primary-100: var(--color-teal-100);
+    --p-primary-200: var(--color-teal-200);
+    --p-primary-300: var(--color-teal-300);
+    --p-primary-400: var(--color-teal-400);
+    --p-primary-500: var(--color-teal-500);
+    --p-primary-600: var(--color-teal-600);
+    --p-primary-700: var(--color-teal-700);
+    --p-primary-800: var(--color-teal-800);
+    --p-primary-900: var(--color-teal-900);
+    --p-primary-950: var(--color-teal-950);
+    --p-surface-0: #ffffff;
+    --p-surface-50: #fafafa;
+    --p-surface-100: #f4f4f5;
+    --p-surface-200: #e4e4e7;
+    --p-surface-300: #d4d4d8;
+    --p-surface-400: #a1a1aa;
+    --p-surface-500: #71717a;
+    --p-surface-600: #52525b;
+    --p-surface-700: #3f3f46;
+    --p-surface-800: #27272a;
+    --p-surface-900: #18181b;
+    --p-surface-950: #09090b;
+    --p-content-border-radius: 6px;
+    --color-darkest-purple: #280a43;
+}
+
+/* Light */
+:root {
+    --p-primary-color: var(--p-primary-500);
+    --p-primary-contrast-color: var(--p-surface-0);
+    --p-primary-hover-color: var(--p-primary-600);
+    --p-primary-active-color: var(--p-primary-700);
+    --p-content-border-color: var(--p-surface-200);
+    --p-content-hover-background: var(--p-surface-100);
+    --p-content-hover-color: var(--p-surface-800);
+    --p-highlight-background: var(--p-primary-50);
+    --p-highlight-color: var(--p-primary-700);
+    --p-highlight-focus-background: var(--p-primary-100);
+    --p-highlight-focus-color: var(--p-primary-800);
+    --p-text-color: var(--p-surface-700);
+    --p-text-hover-color: var(--p-surface-800);
+    --p-text-muted-color: var(--p-surface-500);
+    --p-text-hover-muted-color: var(--p-surface-600);
+}
+
+/*
+* Dark Mode
+* Defaults to system, change the dark variant selector to match the CSS variable configuration.
+* For example;
+* @custom-variant dark (&:where(.app-dark, .app-dark *));
+* should match to;
+* :root[class="app-dark"]
+*/
+@media (prefers-color-scheme: dark) {
+    :root {
+        --p-primary-color: var(--p-primary-400);
+        --p-primary-contrast-color: var(--p-surface-900);
+        --p-primary-hover-color: var(--p-primary-300);
+        --p-primary-active-color: var(--p-primary-200);
+        --p-content-border-color: var(--p-surface-700);
+        --p-content-hover-background: var(--p-surface-800);
+        --p-content-hover-color: var(--p-surface-0);
+        --p-highlight-background: color-mix(in srgb, var(--p-primary-400), transparent 84%);
+        --p-highlight-color: rgba(255, 255, 255, 0.87);
+        --p-highlight-focus-background: color-mix(in srgb, var(--p-primary-400), transparent 76%);
+        --p-highlight-focus-color: rgba(255, 255, 255, 0.87);
+        --p-text-color: var(--p-surface-0);
+        --p-text-hover-color: var(--p-surface-0);
+        --p-text-muted-color: var(--p-surface-400);
+        --p-text-hover-muted-color: var(--p-surface-300);
+    }
+}
+
+
+.fade-in-down-sm
+{
+    opacity: 0;
+    transform: translateY(-6px);
+    animation: fade-in-down-sm forwards;
+    animation-duration: .3s;
+}
+
+.ani-delay-100{
+    animation-delay: 100ms;
+}
+.ani-delay-200{
+    animation-delay: 200ms;
+}
+.ani-delay-300{
+    animation-delay: 300ms;
+}
+.ani-delay-400{
+    animation-delay: 400ms;
+}
+.ani-delay-500{
+    animation-delay: 500ms;
+}
+.ani-delay-600{
+    animation-delay: 600ms;
+}
+.ani-delay-700{
+    animation-delay: 700ms;
+}
+.ani-delay-800{
+    animation-delay: 800ms;
+}
+.ani-delay-900{
+    animation-delay: 900ms;
+}
+.ani-delay-1000{
+    animation-delay: 1000ms;
+}
+
+@keyframes fade-in-down-sm {
+    0% {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    100% {
+        opacity: 100;
+        transform: translateY(0px);
+    }
+}
+
+.ticker-wrap {
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+.ticker-collection {
+  position: relative;
+  left: 0%;
+  animation: swap 20s linear infinite;
+}
+
+.ticker-item {
+  display: inline-block;
+  margin-left: 12rem;
+  font-size: 2rem;
+  color: black;   
+  font-weight: 800;
+  font-family: sans-serif;
+}
+
+/* Transition */
+@keyframes marquee {
+  0% {
+    transform: translateX(0)
+  }
+  100% {
+    transform: translateX(-100%)
+  }
+}
+
+@keyframes swap {
+  0%, 50% {
+    left: 0%;
+  }
+  50.01%,
+  100% {
+    left: 100%;
+  }
+}
