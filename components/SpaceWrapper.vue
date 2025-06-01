@@ -27,7 +27,7 @@ onMounted(() => {
                 // Initialize
                 resizeCanvas();
                 createStars();
-                setTimeout(createShootingStar, Math.random() * 20000 + 20000); // Rare shooting stars
+                setTimeout(createShootingStar, Math.random() * 10000 + 10000); // Rare shooting stars
                 animate();
             }
         }
@@ -54,8 +54,8 @@ onMounted(() => {
 
 let stars: any = [];
 const layerCount = 3; // 3 layers for parallax
-const speeds = [-0.02, 0.01, 0.03]; // Slower speeds for distant stars
-const baseStarCount = 80; // Base count of stars per layer
+const speeds = [-0.015, 0.01, 0.02]; // Slower speeds for distant stars
+const baseStarCount = 100; // Base count of stars per layer
 let shootingStar: any = null;
 
 // Resize the canvas
