@@ -8,8 +8,7 @@
         <UiChipButton @toggled="filterDesign">Design</UiChipButton>
         <UiChipButton @toggled="filterData">Data</UiChipButton>
       </div>
-      <div
-        class="mx-auto grid max-w-2xl grid-cols-1 gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8 items-start mt-6">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8 items-start mt-6">
         <SkillGroup :items="filteredLanguages" title="Languages" :icon="CodeBracketIcon" />
         <SkillGroup :items="filteredFrameworks" title="Frameworks" :icon="PuzzlePieceIcon" />
         <SkillGroup :items="filteredTools" title="Tools" :icon="WrenchScrewdriverIcon" />

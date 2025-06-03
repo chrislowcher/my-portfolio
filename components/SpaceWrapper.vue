@@ -54,7 +54,7 @@ onMounted(() => {
 
 let stars: any = [];
 const layerCount = 3; // 3 layers for parallax
-const speeds = [-0.015, 0.01, 0.02]; // Slower speeds for distant stars
+const speeds = [0.015, -0.01, -0.02]; // Slower speeds for distant stars
 const baseStarCount = 100; // Base count of stars per layer
 let shootingStar: any = null;
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative isolate overflow-hidden py-24 sm:py-32">
+  <div class="relative isolate py-24 sm:py-32">
     <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
       <div class="absolute -bottom-8 -left-96 -z-10 transform-gpu blur-3xl sm:-bottom-64 sm:-left-40 lg:-bottom-32 lg:left-8 xl:-left-10" aria-hidden="true">
         
@@ -15,6 +15,12 @@
             </span>
           </Transition>
         </p>
+      </div>
+
+      <div class="mx-auto flex max-w-2xl sm:mt-24 lg:mt-0 lg:mr-0 lg:ml-10 lg:max-w-none lg:flex-none xl:ml-32">
+        <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+
+        </div>
       </div>
     </div>
   </div>
