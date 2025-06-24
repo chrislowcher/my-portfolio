@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     ]
   },
   app: {
-     baseURL: '/my-portfolio/', // baseURL: '/<repository>/'
+    baseURL: '/my-portfolio/', // baseURL: '/<repository>/'
     buildAssetsDir: 'assets', // don't use "_" at the begining of the folder name to avoids nojkill conflict
     head: {
       link: [
@@ -25,5 +25,8 @@ export default defineNuxtConfig({
         { src: 'https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js' }
       ]
     }
-  }
+  },
+  nitro: {
+    preset: 'static'
+  },
 })

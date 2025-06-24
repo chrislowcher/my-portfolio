@@ -1,9 +1,9 @@
 <template>
   <div>
-    <SpaceWrapper>
+    <SpaceWrapper ref="spaceWrapper">
       <Rocket />
       <MarketingStats />
-      <ProjectsShowcase />
+      <ProjectsShowcase @project-clicked="onPageChanged" />
       <Skills />
     </SpaceWrapper> 
     <Footer />
@@ -12,6 +12,10 @@
 
 <script setup lang="ts">
 
-const clicked = ref();
+const spaceWrapper = ref();
+
+const onPageChanged = () => {
+  spaceWrapper.value.triggerHyperspeed();
+}
 
 </script>

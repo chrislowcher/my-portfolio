@@ -14,11 +14,7 @@ onMounted(() => {
     setTimeout(() => {
         if(canvasRef.value)
         {
-            console.log('canvas ref');
-            console.log(canvasRef.value);
             canvas = canvasRef.value;
-            console.log('canvas');
-            console.log(canvas);
 
             if(canvas)
             {
@@ -34,27 +30,55 @@ onMounted(() => {
     }, 10);
 });
 
+const farStars = ref(0.015);
+const middleStars = ref(-0.01);
+const closeStars = ref(-0.02);
 
-// watch(canvasRef, () => {
-//     if(canvasRef.value)
-//     {
-//         canvas = canvasRef.value;
-//         if(canvas)
-//         {
-//             ctx = canvas.getContext("2d");
-//             window.addEventListener("resize", resizeCanvas);
-//             // Initialize
-//             resizeCanvas();
-//             createStars();
-//             setTimeout(createShootingStar, Math.random() * 20000 + 20000); // Rare shooting stars
-//             animate();
-//         }
-//     }
-// })
+// Save original values so we can interpolate from/to them
+const baseSpeeds = {
+  far: 0.015,
+  middle: -0.01,
+  close: -0.02
+};
+
+function easeInOutQuad(t: number): number {
+  return t < 0.5
+    ? 2 * t * t
+    : -1 + (4 - 2 * t) * t;
+}
+
+function triggerHyperspeed(durationMs = 5000, speedMultiplier = 10) {
+    console.log('triggered');
+    const start = performance.now();
+
+    function animate(time: number) {
+        const elapsed = time - start;
+        const t = Math.min(elapsed / durationMs, 1); // Normalize to 0-1
+        const eased = easeInOutQuad(t);
+
+        const scale = 1 + (speedMultiplier - 1) * (t < 0.5 ? eased : 1 - eased); // ramp up then down
+
+        // Apply scaled speeds
+        farStars.value = baseSpeeds.far * scale;
+        middleStars.value = baseSpeeds.middle * scale;
+        closeStars.value = baseSpeeds.close * scale;
+
+        if (elapsed < durationMs) {
+        requestAnimationFrame(animate);
+        } else {
+        // Reset to original speeds to avoid floating point drift
+        farStars.value = baseSpeeds.far;
+        middleStars.value = baseSpeeds.middle;
+        closeStars.value = baseSpeeds.close;
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
 
 let stars: any = [];
 const layerCount = 3; // 3 layers for parallax
-const speeds = [0.015, -0.01, -0.02]; // Slower speeds for distant stars
+const speeds = [farStars.value, middleStars.value, closeStars.value]; // Slower speeds for distant stars
 const baseStarCount = 100; // Base count of stars per layer
 let shootingStar: any = null;
 
@@ -130,7 +154,7 @@ function drawStars() {
     // Draw stars with parallax effect
     stars.forEach((star: any) => {
         ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-        ctx.fillRect(star.x, star.y, star.size, star.size);
+        ctx.fillRect(star.x, star.y, star.size + 1, star.size);
     });
 }
 
@@ -209,4 +233,27 @@ function animate() {
     drawShootingStar();
     requestAnimationFrame(animate);
 }
+
+defineExpose({
+  triggerHyperspeed
+});
+
+
+
+// watch(canvasRef, () => {
+//     if(canvasRef.value)
+//     {
+//         canvas = canvasRef.value;
+//         if(canvas)
+//         {
+//             ctx = canvas.getContext("2d");
+//             window.addEventListener("resize", resizeCanvas);
+//             // Initialize
+//             resizeCanvas();
+//             createStars();
+//             setTimeout(createShootingStar, Math.random() * 20000 + 20000); // Rare shooting stars
+//             animate();
+//         }
+//     }
+// })
 </script>
