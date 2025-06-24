@@ -30,13 +30,15 @@ onMounted(() => {
     }, 10);
 });
 
-const farStars = ref(0.015);
+const farStars = ref(0.0);
 const middleStars = ref(-0.01);
 const closeStars = ref(-0.02);
+const isHyperspeed = ref(false);
+const stretchFactor = ref(1);
 
 // Save original values so we can interpolate from/to them
 const baseSpeeds = {
-  far: 0.015,
+  far: 0.0,
   middle: -0.01,
   close: -0.02
 };
@@ -47,33 +49,44 @@ function easeInOutQuad(t: number): number {
     : -1 + (4 - 2 * t) * t;
 }
 
-function triggerHyperspeed(durationMs = 5000, speedMultiplier = 10) {
-    console.log('triggered');
-    const start = performance.now();
+function triggerHyperspeed(durationMs = 3000, speedMultiplier = 700) {
+  console.log('triggered');
+  isHyperspeed.value = true;
 
-    function animate(time: number) {
-        const elapsed = time - start;
-        const t = Math.min(elapsed / durationMs, 1); // Normalize to 0-1
-        const eased = easeInOutQuad(t);
+  const start = performance.now();
 
-        const scale = 1 + (speedMultiplier - 1) * (t < 0.5 ? eased : 1 - eased); // ramp up then down
+  function animate(time: number) {
+    const elapsed = time - start;
+    const t = Math.min(elapsed / durationMs, 1);
 
-        // Apply scaled speeds
-        farStars.value = baseSpeeds.far * scale;
-        middleStars.value = baseSpeeds.middle * scale;
-        closeStars.value = baseSpeeds.close * scale;
+    // Ramp up fast, slow down over time
+    const scale = t < 0.3
+      ? 1 + (speedMultiplier - 1) * easeInOutQuad(t / 0.3)
+      : 1 + (speedMultiplier - 1) * (1 - easeInOutQuad((t - 0.3) / 0.7));
 
-        if (elapsed < durationMs) {
-        requestAnimationFrame(animate);
-        } else {
-        // Reset to original speeds to avoid floating point drift
-        farStars.value = baseSpeeds.far;
-        middleStars.value = baseSpeeds.middle;
-        closeStars.value = baseSpeeds.close;
-        }
+    // Stretch increases proportionally with scale (adjust 0.05 if needed)
+    stretchFactor.value = t < 0.3
+      ? 1 + (speedMultiplier - 1) * 0.05 * easeInOutQuad(t / 0.3)
+      : 1 + (speedMultiplier - 1) * 0.05 * (1 - easeInOutQuad((t - 0.3) / 0.7));
+
+    // Apply scaled speeds
+    farStars.value = baseSpeeds.far * scale;
+    middleStars.value = baseSpeeds.middle * scale;
+    closeStars.value = baseSpeeds.close * scale;
+
+    if (elapsed < durationMs) {
+      requestAnimationFrame(animate);
+    } else {
+      // Reset values
+      farStars.value = baseSpeeds.far;
+      middleStars.value = baseSpeeds.middle;
+      closeStars.value = baseSpeeds.close;
+      stretchFactor.value = 1;
+      isHyperspeed.value = false;
     }
+  }
 
-    requestAnimationFrame(animate);
+  requestAnimationFrame(animate);
 }
 
 let stars: any = [];
@@ -102,7 +115,7 @@ function createStars() {
             x: Math.random() * canvas?.width,
             y: Math.random() * canvas?.height,
             size: Math.random() * (i + 0.1) + 0.1, // Larger stars for closer layers
-            speed: speeds[i],
+            speedRef: i === 0 ? farStars : i === 1 ? middleStars : closeStars,
             opacity: Math.random(),
             baseOpacity: Math.random() * 0.5 + 0.5, // Base opacity for twinkling
             layer: i, // Track which layer the star belongs to
@@ -113,24 +126,30 @@ function createStars() {
 
 // Update star positions and simulate twinkling
 function updateStars() {
-    stars.forEach((star: any) => {
-        star.y -= star.speed; // All stars move upward
-        star.opacity =
-        star.baseOpacity + Math.sin(Date.now() * 0.001 * star.speed) * 0.3; // Smooth twinkle
-    
-        // Reset star position when it goes off-screen
-        if (star.speed < 0) {
-        if (star.y > canvas?.height) {
-            star.y = 0;
-            star.x = Math.random() * canvas?.width;
-        }
-        } else {
-        if (star.y < 0) {
-            star.y = canvas?.height;
-            star.x = Math.random() * canvas?.width;
-        }
-        }
-    });
+  stars.forEach((star: any) => {
+    // Rebind speed dynamically from current ref values
+    star.speed = star.speedRef.value;
+
+    if (star.speed !== 0) {
+        star.y -= star.speed;
+    }
+
+    star.opacity = isHyperspeed.value
+        ? star.baseOpacity
+        : star.baseOpacity + Math.sin(Date.now() * 0.001 * star.speed) * 0.3;
+
+    if (star.speed < 0) {
+      if (star.y > canvas?.height) {
+        star.y = 0;
+        star.x = Math.random() * canvas?.width;
+      }
+    } else {
+      if (star.y < 0) {
+        star.y = canvas?.height;
+        star.x = Math.random() * canvas?.width;
+      }
+    }
+  });
 }
 
 // Draw the stars
@@ -154,7 +173,8 @@ function drawStars() {
     // Draw stars with parallax effect
     stars.forEach((star: any) => {
         ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-        ctx.fillRect(star.x, star.y, star.size + 1, star.size);
+        const stretch = star.layer === 0 ? 1 : stretchFactor.value;
+        ctx.fillRect(star.x, star.y, star.size + 1, star.size * stretch);
     });
 }
 
