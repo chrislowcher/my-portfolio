@@ -17,12 +17,14 @@
 </template>
 
 <script setup lang="ts">
+import { useHyperspeed } from '@/composables/useHyperspeed';
+import { useRouter } from 'vue-router';
 
-
-const emit = defineEmits(['project-clicked']);
-
+const router = useRouter();
+const { triggerHyperspeed } = useHyperspeed();
 
 const clicked = () => {
-    emit("project-clicked");
+    triggerHyperspeed();
+    router.push('/mythictrack');
 }
 </script>

@@ -13,7 +13,7 @@
 <style scoped>
  .rocket {
 	 position: absolute;
-	 top: 10%;
+	 top: 20%;
 	 width: 80px;
 	 left: calc(60%);
 	 z-index: 10;

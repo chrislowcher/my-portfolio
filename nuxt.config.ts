@@ -24,6 +24,10 @@ export default defineNuxtConfig({
       script: [
         { src: 'https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js' }
       ]
+    },
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in'
     }
   },
   nitro: {
