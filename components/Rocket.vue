@@ -1,5 +1,5 @@
 <template>
-    <div  :class="['rocket zoomInUp', { hyperspeed }]">
+    <div :class="['rocket zoomInUp', { hyperspeed }]">
         <div class="rocket-body">
             <div class="body"></div>
             <div class="fin fin-left"></div>
@@ -97,8 +97,8 @@ defineProps<{
 
 .rocket .window,
 .rocket .fin {
-	transition: background-color 2.5s ease-in-out;
-  	background-color: var(--rocket-color, var(--color-teal-500)) !important;
+	transition: background-color 2s ease-in-out;
+  	background-color: var(--base-app-color, var(--color-teal-500)) !important;
 }
  
 @keyframes bounce {
@@ -180,7 +180,7 @@ defineProps<{
   50% {
     background: linear-gradient(to bottom, transparent 8%, #f5f5f5 75%, transparent 100%);
 	transform: translateY(-100px);
-	height: 350px;
+	height: 376px;
   }
   75% {
     background: linear-gradient(to bottom, transparent 12%, #FFF 75%, transparent 100%);

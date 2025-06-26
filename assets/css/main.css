@@ -9,7 +9,8 @@ html{
 html, .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
     font-feature-settings: "cv11" !important;
     font-family: theme(--font-inter) !important;
-    scrollbar-color: var(--p-primary-500) rgba(1, 10, 8, 1);
+    transition: scrollbar-color 2s ease-in-out;
+    scrollbar-color: var(--base-app-color) rgba(1, 10, 8, 1);
     scrollbar-width: thin;
 }
 
@@ -21,6 +22,18 @@ html, .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
 
 @theme {
     --font-inter: inter; 
+
+    --color-cyber-yellow-50:  oklch(0.9905 0.0249 101.95);
+    --color-cyber-yellow-100: oklch(0.9745 0.0645 101.82);
+    --color-cyber-yellow-200: oklch(0.9567 0.1242 103.55);
+    --color-cyber-yellow-300: oklch(0.9439 0.1751 104.73);
+    --color-cyber-yellow-400: oklch(0.9336 0.1916 104.07);
+    --color-cyber-yellow-500: oklch(0.9305 0.1966 105.26); /* base */
+    --color-cyber-yellow-600: oklch(0.8545 0.181 105.84);
+    --color-cyber-yellow-700: oklch(0.7181 0.151 104.83);
+    --color-cyber-yellow-800: oklch(0.5804 0.1212 103.85);
+    --color-cyber-yellow-900: oklch(0.4354 0.0904 103.79);
+    --color-cyber-yellow-950: oklch(0.2939 0.062 107.02);
 }
 
 :root {
@@ -50,6 +63,18 @@ html, .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
     --p-surface-950: #09090b;
     --p-content-border-radius: 6px;
     --color-darkest-purple: #280a43;
+
+    --cyber-yellow-50:  #fffdea;
+    --cyber-yellow-100: #fff9c7;
+    --cyber-yellow-200: #fff58f;
+    --cyber-yellow-300: #fff24f;
+    --cyber-yellow-400: #ffee23;
+    --cyber-yellow-500: #fcee0a;
+    --cyber-yellow-600: #e0d509;
+    --cyber-yellow-700: #b3a807;
+    --cyber-yellow-800: #877d05;
+    --cyber-yellow-900: #5a5303;
+    --cyber-yellow-950: #302e01;
 }
 
 /* Light */

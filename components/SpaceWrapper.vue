@@ -158,17 +158,17 @@ function drawStars() {
   ctx.clearRect(0, 0, canvas?.width, canvas?.height);
 
   // Add a dark radial blur gradient background
-  const gradient = ctx.createRadialGradient(
-    canvas?.width / .75,
-    canvas?.height / 2,
-    canvas?.width / 8, // Start small for a blur effect
-    canvas?.width / 2,
-    canvas?.height / 16,
-    canvas?.width // Expand to the edges
-  );
-  gradient.addColorStop(0, "rgba(1, 10, 8, 1)"); // Deep dark blue at the center
-  gradient.addColorStop(1, "rgba(0, 0, 0, 1)"); // Black at the edges
-  ctx.fillStyle = gradient;
+  // const gradient = ctx.createRadialGradient(
+  //   canvas?.width / .75,
+  //   canvas?.height / 2,
+  //   canvas?.width / 8, // Start small for a blur effect
+  //   canvas?.width / 2,
+  //   canvas?.height / 16,
+  //   canvas?.width // Expand to the edges
+  // );
+  // gradient.addColorStop(0, "rgba(1, 10, 8, 1)"); // Deep dark blue at the center
+  // gradient.addColorStop(1, "rgba(0, 0, 0, 1)"); // Black at the edges
+  ctx.fillStyle = '#000000';
   ctx.fillRect(0, 0, canvas?.width, canvas?.height);
 
   // Draw stars with parallax effect

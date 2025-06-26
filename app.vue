@@ -15,9 +15,22 @@ const route = useRoute();
 const { isHyperspeed } = useHyperspeed();
 
 watch(route, () => {
-  // Example: set theme color on each route change
-  document.documentElement.style.setProperty('--rocket-color', route.path.includes('mythictrack') ? 'var(--color-indigo-500)' : 'var(--color-teal-500)');
+  document.documentElement.style.setProperty('--base-app-color', `var(--color-${getColorFromRoute}-500)`);
+  document.documentElement.style.setProperty('--base-app-color-dark', `var(--color-${getColorFromRoute}-950)`);
 });
+
+const getColorFromRoute = computed(() => {
+  if(route.path.includes('mythictrack')) {
+    return 'indigo)';
+  }
+  if(route.path.includes('cyberpunk')) {
+    return 'cyber-yellow)';
+  }
+  
+  return 'teal)'
+});
+
+
 </script>
 
 <style>
