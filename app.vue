@@ -1,7 +1,7 @@
 <template>
   <div>
     <SpaceWrapper>
-      <Rocket />
+      <Rocket :hyperspeed="isHyperspeed"/>
       <NuxtPage />
     </SpaceWrapper> 
     <Footer />
@@ -9,7 +9,15 @@
 </template>
 
 <script setup lang="ts">
+import { useHyperspeed } from '@/composables/useHyperspeed';
 
+const route = useRoute();
+const { isHyperspeed } = useHyperspeed();
+
+watch(route, () => {
+  // Example: set theme color on each route change
+  document.documentElement.style.setProperty('--rocket-color', route.path.includes('mythictrack') ? 'var(--color-indigo-500)' : 'var(--color-teal-500)');
+});
 </script>
 
 <style>

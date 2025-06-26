@@ -1,5 +1,5 @@
 <template>
-    <div class="rocket zoomInUp">
+    <div  :class="['rocket zoomInUp', { hyperspeed }]">
         <div class="rocket-body">
             <div class="body"></div>
             <div class="fin fin-left"></div>
@@ -10,6 +10,13 @@
     </div>
 </template>
 
+<script setup lang="ts">
+defineProps<{
+  hyperspeed: boolean
+}>();
+
+</script>
+
 <style scoped>
  .rocket {
 	 position: absolute;
@@ -17,6 +24,7 @@
 	 width: 80px;
 	 left: calc(60%);
 	 z-index: 10;
+	 transition: all .5s ease-in-out;
 }
  .rocket .rocket-body {
 	 width: 80px;
@@ -53,6 +61,7 @@
 	 left: calc(50% - 25px);
 	 top: 40px;
 	 border: 5px solid #b4b2b2;
+	 transition: background-color .5s ease-in-out;
 }
  .rocket .fin {
 	 position: absolute;
@@ -60,6 +69,7 @@
 	 height: 55px;
 	 width: 50px;
 	 background-color: var(--color-teal-500);
+	 transition: background-color .5s ease-in-out;
 }
  .rocket .fin-left {
 	 left: -30px;
@@ -82,6 +92,13 @@
 	 left: calc(50% - 14px);
 	 animation: exhaust 0.3s infinite;
 	 z-index: 5;
+	 transition: all .3s ease-in-out;
+}
+
+.rocket .window,
+.rocket .fin {
+	transition: background-color 2.5s ease-in-out;
+  	background-color: var(--rocket-color, var(--color-teal-500)) !important;
 }
  
 @keyframes bounce {
@@ -132,6 +149,42 @@
 
 .zoomInUp {
   animation: zoomInUp forwards 3s;
+}
+
+.rocket.hyperspeed .rocket-body {
+  animation: propel 2.5s infinite;
+}
+
+.rocket.hyperspeed .exhaust-flame {
+	animation: propel-exhaust 2.5s infinite;
+}
+
+/* Optional faster bounce */
+@keyframes propel {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* More intense flame */
+@keyframes propel-exhaust {
+  0% {
+    background: linear-gradient(to bottom, transparent 10%, #f5f5f5 75%, transparent 100%);
+  }
+  50% {
+    background: linear-gradient(to bottom, transparent 8%, #f5f5f5 75%, transparent 100%);
+	transform: translateY(-100px);
+	height: 350px;
+  }
+  75% {
+    background: linear-gradient(to bottom, transparent 12%, #FFF 75%, transparent 100%);
+  }
 }
 
 </style>
