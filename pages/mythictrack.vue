@@ -38,7 +38,6 @@ import { useRouter } from 'vue-router';
 
 onMounted(() => {
     document.documentElement.style.setProperty('--base-app-color','var(--color-indigo-500)');
-    document.documentElement.style.setProperty('--base-app-color-dark','var(--color-indigo-950)');
 });
 
 const router = useRouter();

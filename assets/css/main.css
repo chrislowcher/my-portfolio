@@ -10,7 +10,7 @@ html, .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
     font-feature-settings: "cv11" !important;
     font-family: theme(--font-inter) !important;
     transition: scrollbar-color 2s ease-in-out;
-    scrollbar-color: var(--base-app-color) rgba(1, 10, 8, 1);
+    scrollbar-color: var(--base-app-color) #000;
     scrollbar-width: thin;
 }
 

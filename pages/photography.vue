@@ -1,7 +1,7 @@
 <template>
     <div class="z-20">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <button type="button" class="inline-flex items-center gap-x-1.5 rounded-md bg-cyber-yellow-50/5 px-3 py-2 text-md font-semibold text-cyber-yellow-400 shadow-xs hover:bg-cyber-yellow-100/8 cursor-pointer backdrop-blur-xs" @click="goBack">
+            <button type="button" class="inline-flex items-center gap-x-1.5 rounded-md bg-emerald-50/5 px-3 py-2 text-md font-semibold text-emerald-400 shadow-xs hover:bg-emerald-100/8 cursor-pointer backdrop-blur-xs" @click="goBack">
                 <ChevronLeftIcon class="-ml-0.5 size-5" aria-hidden="true" />
                  Back 
             </button>
@@ -9,12 +9,9 @@
         <div class="relative isolate overflow-hidden py-24 sm:py-32">
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-                    <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Cyberpunk 2077 Mods</p>
-                    <h2 class="text-base/8 font-semibold text-cyber-yellow-500">Hosted on Nexus Mods</h2>
-                    <p class="mt-6 text-lg/8 text-gray-300">As an active member of the Cyberpunk 2077 modding community I have created multiple of my own mods, with two of them getting a fully featured public release. I also help other mod authors test their mods and help players with mod config on the official Discord. </p>
-                    <div class="flex gap-1 mt-2">
-                        <UiBadge color="cyber-yellow">Lua</UiBadge>
-                    </div>
+                    <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Photography</p>
+                    <h2 class="text-base/8 font-semibold text-emerald-500">from my travels</h2>
+                    <p class="mt-6 text-lg/8 text-gray-300"> I like to travel and take pictures.</p>
                 </div>
                 <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4 backdrop-blur-xs">
                     <div v-for="stat in stats" :key="stat.id" class="flex flex-col bg-white/5 p-8">
@@ -33,7 +30,7 @@ import { useHyperspeed } from '@/composables/useHyperspeed';
 import { useRouter } from 'vue-router';
 
 onMounted(() => {
-    document.documentElement.style.setProperty('--base-app-color','var(--color-cyber-yellow-500)');
+    document.documentElement.style.setProperty('--base-app-color','var(--color-emerald-500)');
 });
 
 const router = useRouter();

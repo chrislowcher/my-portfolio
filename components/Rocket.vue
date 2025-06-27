@@ -20,7 +20,7 @@ defineProps<{
 <style scoped>
  .rocket {
 	 position: absolute;
-	 top: 20%;
+	 top: 250px;
 	 width: 80px;
 	 left: calc(60%);
 	 z-index: 10;

@@ -9,6 +9,5 @@
 <script setup lang="ts">
 onMounted(() => {
     document.documentElement.style.setProperty('--base-app-color','var(--color-teal-500)');
-    document.documentElement.style.setProperty('--base-app-color-dark','var(--color-teal-950)');
 });
 </script>

@@ -1,26 +1,58 @@
 <template>
-  <div class="relative isolate overflow-hidden pb-12 sm:pb-16">
-    <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="flex items-center">
-        <UiChipButton @toggled="filterBackend">Backend</UiChipButton>
-        <UiChipButton @toggled="filterFrontend">Frontend</UiChipButton>
-        <UiChipButton @toggled="filterMobile">Mobile</UiChipButton>
-        <UiChipButton @toggled="filterDesign">Design</UiChipButton>
-        <UiChipButton @toggled="filterData">Data</UiChipButton>
-      </div>
-      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8 items-start mt-6">
-        <SkillGroup :items="filteredLanguages" title="Languages" :icon="CodeBracketIcon" />
-        <SkillGroup :items="filteredFrameworks" title="Frameworks" :icon="PuzzlePieceIcon" />
-        <SkillGroup :items="filteredTools" title="Tools" :icon="WrenchScrewdriverIcon" />
-      </div>
+    <div class="z-20">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <button type="button" class="inline-flex items-center gap-x-1.5 rounded-md bg-cyan-50/5 px-3 py-2 text-md font-semibold text-cyan-400 shadow-xs hover:bg-cyan-100/8 cursor-pointer backdrop-blur-xs" @click="goBack">
+                <ChevronLeftIcon class="-ml-0.5 size-5" aria-hidden="true" />
+                 Back 
+            </button>
+        </div>
+        <div class="relative isolate overflow-hidden py-24 sm:py-32">
+            <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
+                    <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Skills</p>
+                    <h2 class="text-base/8 font-semibold text-cyan-500">that pay the bills</h2>
+                    <p class="mt-6 text-lg/8 text-gray-300">Here are all of my skills related to digital technology and creativty. Outside of these listed skills, I am an avid golfer, skateboarder, and snowboarder. I also have some pretty sweet LEGO building skills.</p>
+                </div>
+            </div>
+        </div>
+        <div class="relative isolate overflow-hidden pb-12 sm:pb-16">
+            <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="flex items-center">
+                    <UiChipButton @toggled="filterBackend">Backend</UiChipButton>
+                    <UiChipButton @toggled="filterFrontend">Frontend</UiChipButton>
+                    <UiChipButton @toggled="filterMobile">Mobile</UiChipButton>
+                    <UiChipButton @toggled="filterDesign">Design</UiChipButton>
+                    <UiChipButton @toggled="filterData">Data</UiChipButton>
+                </div>
+                <div class="mx-auto grid max-w-2xl grid-cols-1 gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8 items-start mt-6">
+                    <SkillGroup :items="filteredLanguages" title="Languages" :icon="CodeBracketIcon" />
+                    <SkillGroup :items="filteredFrameworks" title="Frameworks" :icon="PuzzlePieceIcon" />
+                    <SkillGroup :items="filteredTools" title="Tools" :icon="WrenchScrewdriverIcon" />
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
+import { ChevronLeftIcon } from '@heroicons/vue/20/solid'
+import { useHyperspeed } from '@/composables/useHyperspeed';
+import { useRouter } from 'vue-router';
 import { PuzzlePieceIcon, CodeBracketIcon, WrenchScrewdriverIcon } from '@heroicons/vue/20/solid'
 
 const selectedTags = ref('');
+
+onMounted(() => {
+    document.documentElement.style.setProperty('--base-app-color','var(--color-cyan-500)');
+});
+
+const router = useRouter();
+const { triggerHyperspeed } = useHyperspeed();
+
+const goBack = () => {
+    triggerHyperspeed();
+    router.push('/');
+}
 
 const tags = [
   { name: 'Backend', icon: '', tag: '#backend' },
@@ -165,4 +197,5 @@ const filterMobile = (selected: boolean) => {
 const filterData = (selected: boolean) => {
   selectedTags.value = selected ? selectedTags.value + '#data' : selectedTags.value.replace('#data', '');
 }
+
 </script>

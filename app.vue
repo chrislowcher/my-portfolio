@@ -16,7 +16,6 @@ const { isHyperspeed } = useHyperspeed();
 
 watch(route, () => {
   document.documentElement.style.setProperty('--base-app-color', `var(--color-${getColorFromRoute}-500)`);
-  document.documentElement.style.setProperty('--base-app-color-dark', `var(--color-${getColorFromRoute}-950)`);
 });
 
 const getColorFromRoute = computed(() => {
@@ -25,6 +24,18 @@ const getColorFromRoute = computed(() => {
   }
   if(route.path.includes('cyberpunk')) {
     return 'cyber-yellow)';
+  }
+  if(route.path.includes('photography')) {
+    return 'emerald)';
+  }
+  if(route.path.includes('design')) {
+    return 'amber)';
+  }
+  if(route.path.includes('youtube')) {
+    return 'red)';
+  }
+  if(route.path.includes('skills')) {
+    return 'cyan)';
   }
   
   return 'teal)'
