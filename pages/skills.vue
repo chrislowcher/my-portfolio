@@ -1,5 +1,5 @@
 <template>
-    <div class="z-20">
+    <div class="z-20 px-6 lg:px-8">
         <div class="mx-auto max-w-7xl">
             <button type="button" class="inline-flex items-center gap-x-1.5 rounded-md bg-cyan-50/5 px-3 py-2 text-md font-semibold text-cyan-400 shadow-xs hover:bg-cyan-100/8 cursor-pointer backdrop-blur-xs" @click="goBack">
                 <ChevronLeftIcon class="-ml-0.5 size-5" aria-hidden="true" />

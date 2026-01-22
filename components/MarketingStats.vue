@@ -37,7 +37,7 @@ onMounted(initOdometers)
 <template>
     <ClientOnly>
         <dl
-          class="grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4 backdrop-blur-xs"
+          class="grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl ring-1 ring-white/10 ring-inset text-center sm:grid-cols-2 lg:grid-cols-4 backdrop-blur-xs"
         >
           <div
             v-for="(stat, index) in stats"

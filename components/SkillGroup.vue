@@ -1,5 +1,5 @@
 <template>
-  <div class="transition duration-200 ease-in-out flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-white/10 ring-inset backdrop-blur-xs">
+  <div class="transition duration-200 ease-in-out flex gap-x-4 rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 ring-inset backdrop-blur-xs">
     <component :is="icon" class="h-7 w-5 flex-none text-cyan-400" aria-hidden="true" />
     <div class="text-base/7">
       <AutoHeight>

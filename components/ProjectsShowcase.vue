@@ -9,7 +9,7 @@
                 </div>
             </div>
         </div>
-        <div class="relative mx-auto max-w-7xl fade-in-down-sm ani-delay-900">
+        <div class="relative mx-auto max-w-7xl fade-in-down-sm ani-delay-900 px-6 lg:px-8">
             <div class="mx-auto grid max-w-2xl grid-cols-1 gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8 items-start mt-3 mb-6">
                 <div class="overflow-hidden group duration-200 ease-in-out flex justify-between gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-white/10 ring-inset backdrop-blur-xs hover:shadow-md hover:ring-2 hover:ring-indigo-500 hover:bg-white/9 hover:cursor-pointer" @click="goToRoute('/mythictrack')">
                     <p class="duration-200 ease-in-out text-xl font-semibold tracking-tight text-pretty text-white sm:text-xl group-hover:text-indigo-500">Mythic Track</p>

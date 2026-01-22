@@ -30,8 +30,8 @@
                 </div>
                 <div v-if="showContent" class="mt-24 fade-in-down-sm ani-delay-1100">
                     <ClientOnly>
-                        <div class="rounded-2xl [mask-image:linear-gradient(to_bottom,black_86%,transparent_96%)]">
-                            <div class="backdrop-blur-xs bg-white/5 py-8 sm:py-12">
+                        <div class="bg-white/5 p-6 rounded-2xl ring-1 ring-white/10 ring-inset backdrop-blur-xs [mask-image:linear-gradient(to_bottom,black_86%,transparent_96%)]">
+                            <div class="py-8 sm:py-12">
                                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                                     <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
                                         <p class="text-base/7 font-semibold text-indigo-600 dark:text-indigo-500">from the kitchen table</p>
@@ -44,8 +44,8 @@
                                         </div>
                                         <div>
                                             <p>The tech behind Mythic Track is a little off-beat. I wanted to do something new, I wanted to learn more. C# and Typescript are my best languages, so I knew the backend would be .NET - it's fast and efficient for me to spin up C# APIs.</p>
-                                            <p class="mt-8">The frontend is Blazor. A Microsoft technology that I had been following for a while. Around 2023 it had finally gathered enough credibility to use for something of this scale. Want my opions on Blazor? Glad you asked. I'll stick to React or Vue for future projects but don't get me wrong... it is very cool. </p>
-                                            <p class="mt-8">Mythic Track is hosted on Azure, with some services hosted on AWS for cost reasons. We have a complete build pipeline in gtihub actions for automated deployments, we have test environments, and are able to run the site without a financial loss.</p>
+                                            <p class="mt-8">The frontend is Blazor. A Microsoft technology that I had been following for a while. Around 2023 it had finally gathered enough credibility to use for something of this scale. Want my opinion on Blazor? Glad you asked. I'll stick to React or Vue for future projects but don't get me wrong... it is very cool. </p>
+                                            <p class="mt-8">Mythic Track is hosted on Azure, with some services hosted on AWS for cost reasons. We have a complete build pipeline in gtihub actions for automated deployments, we have test environments, and are able to run the site without a financial loss thanks to dozens of loyal patrons.</p>
                                         </div>
                                         </div>
                                         <div class="mt-10 flex items-center gap-4">

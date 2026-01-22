@@ -11,7 +11,7 @@
         </div>
         <div class="relative isolate overflow-hidden pb-12 sm:pb-16">
             <div class="relative mx-auto max-w-7xl">
-                <div class="flex items-center">
+                <div class="flex flex-wrap items-center gap-2">
                     <UiChipButton @toggled="(selected: boolean) => filter(selected, '#frontend')">Frontend</UiChipButton>
                     <UiChipButton @toggled="(selected: boolean) => filter(selected, '#mobile')">Mobile</UiChipButton>
                     <UiChipButton @toggled="(selected: boolean) => filter(selected, '#backend')">Backend</UiChipButton>

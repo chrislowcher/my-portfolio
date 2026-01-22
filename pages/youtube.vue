@@ -21,7 +21,7 @@
                     <MarketingStats :stats="stats" />
                 </div>
                 <div v-if="showContent" class="mt-24 fade-in-down-sm ani-delay-1100">
-                    <div class="py-8 sm:py-12 backdrop-blur-xs rounded-2xl bg-white/5 [mask-image:linear-gradient(to_bottom,black_86%,transparent_96%)] overflow-hidden">
+                    <div class="py-8 sm:py-12 backdrop-blur-xs rounded-2xl ring-1 ring-white/10 ring-inset bg-white/5 [mask-image:linear-gradient(to_bottom,black_86%,transparent_96%)]">
                         <div class="mx-auto max-w-7xl px-6 lg:px-8">
                             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
                                 <p class="text-base/7 font-semibold text-red-600 dark:text-red-500">exploring a new world</p>

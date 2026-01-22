@@ -23,7 +23,6 @@ defineProps<{
 	 top: 250px;
 	 width: 80px;
 	 left: calc(60%);
-	 z-index: 10;
 	 transition: all .5s ease-in-out;
 }
  .rocket .rocket-body {

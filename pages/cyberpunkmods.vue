@@ -11,7 +11,7 @@
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
                     <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Video Game Mods</p>
                     <h2 class="text-base/8 font-semibold text-cyber-yellow-500">Hosted on Nexus Mods</h2>
-                    <p class="mt-6 text-lg/8 text-gray-300">As an active member of the Cyberpunk 2077 modding community I have created multiple of my own mods, with two of them getting a fully featured public release. I also help other mod authors test their mods and help players with mod config on the official Discord. </p>
+                    <p class="mt-6 text-lg/8 text-gray-300">As an active member of the Cyberpunk 2077 modding community I have created multiple of my own mods, with two of them getting a fully featured public release. I also help other mod authors test their mods and help players with mod config on the official Discord and Reddit. </p>
                     <div class="flex gap-1 mt-2">
                         <UiBadge color="cyber-yellow">Lua</UiBadge>
                     </div>
@@ -20,7 +20,7 @@
                     <MarketingStats :stats="stats" />
                 </div>
                 <div v-if="showContent" class="mt-24 fade-in-down-sm ani-delay-1100">
-                    <div class="py-8 sm:py-12 backdrop-blur-xs rounded-2xl bg-white/5 [mask-image:linear-gradient(to_bottom,black_86%,transparent_96%)] overflow-hidden">
+                    <div class="py-8 sm:py-12 backdrop-blur-xs rounded-2xl ring-1 ring-white/10 ring-inset bg-white/5 [mask-image:linear-gradient(to_bottom,black_86%,transparent_96%)] overflow-hidden">
                         <div class="mx-auto max-w-7xl px-6 lg:px-8">
                             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
                                 <p class="text-base/7 font-semibold text-cyber-yellow-600 dark:text-cyber-yellow-500">expanding my horizons</p>
@@ -29,7 +29,7 @@
                                     <div>
                                         <p> I have been a gamer since as long as I can remember. It's the main reason I got into computers and coding in the first place. </p>
                                         <p class="mt-8">Somewhere along the my path through life, that dream got a little lost. I had always wanted to learn how to make mods, but every time I looked into it, I got overwhelmed and put it down.</p>
-                                        <p class="mt-8"> For me, Cyberpunk 2077 is a masterpiece. After spending hundreds of hours in the game and downloaded hundreds of mods, I decided it was time I learn to make my own. </p>
+                                        <p class="mt-8"> For me, Cyberpunk 2077 is a masterpiece. After spending hundreds of hours in the game and downloading hundreds of mods, I decided it was time I learn to make my own. </p>
                                     </div>
                                     <div>
                                         <p> I had my first mod idea because I wanted to capture slomotion clips of my gameplay and create cinematic videos. I dived in and looked at the code for mods I had downloaded and taught myself Lua scripting the best I could. </p>
