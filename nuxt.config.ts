@@ -4,11 +4,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+
   vite: {
     plugins: [
       tailwindcss()
     ]
   },
+
   app: {
     baseURL: '/my-portfolio/', // baseURL: '/<repository>/'
     buildAssetsDir: 'assets', // don't use "_" at the begining of the folder name to avoids nojkill conflict
@@ -30,7 +32,10 @@ export default defineNuxtConfig({
       mode: 'out-in'
     }
   },
+
   nitro: {
     preset: 'static'
   },
+
+  modules: ['@nuxt/image'],
 })

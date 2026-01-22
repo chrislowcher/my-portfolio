@@ -1,8 +1,7 @@
 <template>
     <div>
-        <MarketingStats />
+        <HeroSection />
         <ProjectsShowcase />
-        <!-- <Skills /> -->
     </div>
 </template>
 

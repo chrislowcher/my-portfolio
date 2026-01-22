@@ -45,12 +45,18 @@ const getColorFromRoute = computed(() => {
 </script>
 
 <style>
-.page-enter-active {
-  transition: all 1.33s ease-in-out;
-}
+.page-enter-active,
 .page-leave-active {
-  transition: all 1.25s ease-in-out;
+  transition: transform 1.3s ease-in-out, opacity 1.3s ease-in-out;
 }
+
+/* Prevent layout jump */
+.page-enter-from,
+.page-leave-to {
+  position: absolute;
+  width: 100%;
+}
+
 .page-enter-from {
   opacity: 0;
   transform: translateY(-1200px);

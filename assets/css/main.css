@@ -163,6 +163,9 @@ html, .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
 .ani-delay-1000{
     animation-delay: 1000ms;
 }
+.ani-delay-1100{
+    animation-delay: 1100ms;
+}
 
 @keyframes fade-in-down-sm {
     0% {

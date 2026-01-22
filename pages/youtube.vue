@@ -13,21 +13,19 @@
                     <h2 class="text-base/8 font-semibold text-red-500">where I post embarassing content</h2>
                     <p class="mt-6 text-lg/8 text-gray-300"> I have filmed some cool stuff.</p>
                 </div>
-                <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4 backdrop-blur-xs">
-                    <div v-for="stat in stats" :key="stat.id" class="flex flex-col bg-white/5 p-8">
-                    <dt class="text-sm/6 font-semibold text-gray-300">{{ stat.name }}</dt>
-                    <dd class="order-first text-3xl font-semibold tracking-tight text-white">{{ stat.value }}</dd>
-                    </div>
-                </dl>
+                <div class="mt-24">
+                    <MarketingStats :stats="stats" />
+                </div>  
             </div>
         </div>    
     </div>
 </template>
 
 <script setup lang="ts">
-import { ChevronLeftIcon } from '@heroicons/vue/20/solid'
 import { useHyperspeed } from '@/composables/useHyperspeed';
+import { ChevronLeftIcon } from '@heroicons/vue/20/solid';
 import { useRouter } from 'vue-router';
+import type { Stat } from '~/models/stat';
 
 onMounted(() => {
     document.documentElement.style.setProperty('--base-app-color','var(--color-red-500)');
@@ -41,10 +39,10 @@ const goBack = () => {
     router.push('/');
 }
 
-const stats = [
-  { id: 1, name: 'Downloads', value: '2,300+' },
-  { id: 2, name: 'Mod Views', value: '5,500+' },
-  { id: 3, name: 'Endorsments', value: '60+' },
-  { id: 4, name: 'Donation points earned for charity', value: '2,400+' },
+const stats: Stat[] = [
+  { id: 1, description: 'Downloads', data: 2300, afterDetail: '+' },
+  { id: 2, description: 'Mod Views', data: 5500, afterDetail: '+' },
+  { id: 3, description: 'Endorsments', data: 60, afterDetail: '+' },
+  { id: 4, description: 'Donation points earned for charity', data: 2400, afterDetail: '+' },
 ]
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-gray-900 py-20 sm:py-32" style="min-height: 100vh;">
+  <div class="relative py-20 sm:py-32" style="min-height: 100vh; background-color: black;">
     <canvas ref="canvasRef" class="absolute top-0 left-0 w-[100%] h-[100%]"></canvas>
     <slot />
   </div>
@@ -52,7 +52,8 @@ function easeInOutQuad(t: number): number {
 }
 
 function triggerHyperspeed(durationMs = 3000, speedMultiplier = 700) {
-  console.log('hyperspeed activated');
+  consoleEasterEgg();
+
   isHyperspeed.value = true;
 
   const start = performance.now();
@@ -221,6 +222,85 @@ function updateShootingStar() {
   }
 }
 
+function consoleEasterEgg() {
+  const frames = [
+`
+        █
+       ███
+      █   █
+       ███
+      █████
+     ███ ███
+     ███ ███
+        █
+        ▓
+        ░
+        ░
+        ░
+        ▒
+        ▓
+        
+`,
+`
+        █
+       ███
+      █   █
+       ███
+      █████
+     ███ ███
+     ███ ███
+        ░
+        ░
+        ░
+        ░
+        ▒
+        ▓
+        █
+        
+`,
+`
+        █
+       ███
+      █   █
+       ███
+      █████
+     ███ ███
+     ███ ███
+        ▓
+        █
+        █
+        ▓
+        ▓
+        ▓
+        ░
+        
+`
+];
+
+  let y = 20;
+  let i = 0;
+
+  const launch = setInterval(() => {
+    console.clear();
+    console.log(
+      `%c${"\n".repeat(y)}${frames[i % frames.length]}`,
+      `
+        color: #7df9ff;
+        font-family: monospace;
+        font-size: 14px;
+        text-shadow:
+          0 0 4px #7df9ff,
+          0 0 8px #00eaff;
+      `
+    );
+
+    y--;
+    i++;
+
+    if (y < 0) clearInterval(launch);
+  }, 90);
+}
+
 // Draw the shooting star
 function drawShootingStar() {
   if (!shootingStar) return;
@@ -259,20 +339,4 @@ defineExpose({
   triggerHyperspeed
 });
 
-// watch(canvasRef, () => {
-//     if(canvasRef.value)
-//     {
-//         canvas = canvasRef.value;
-//         if(canvas)
-//         {
-//             ctx = canvas.getContext("2d");
-//             window.addEventListener("resize", resizeCanvas);
-//             // Initialize
-//             resizeCanvas();
-//             createStars();
-//             setTimeout(createShootingStar, Math.random() * 20000 + 20000); // Rare shooting stars
-//             animate();
-//         }
-//     }
-// })
 </script>

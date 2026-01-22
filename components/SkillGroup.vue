@@ -7,7 +7,7 @@
         <div class="space-y-4">
           <TransitionGroup name="list" tag="div">
             <div v-for="(items, type) in grouped" :key="type" class="mt-3">
-                <p class="text-sm font-semibold text-cyan-700">{{ type }}</p>
+                <p class="text-sm font-semibold text-cyan-600">{{ SkillTypeEnum[type] }}</p>
                 <TransitionGroup name="list" tag="p">
                   <p v-for="item in items" :key="item.name" class="text-gray-200">{{ item.name }}</p>
                 </TransitionGroup>
@@ -20,20 +20,27 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed } from 'vue';
+import { SkillTypeEnum, type Skill } from '~/models/skill';
 
 const props = defineProps<{
-  items: any[],
+  items: Skill[],
   title: string,
   icon: any
 }>();
 
-const grouped = computed(() => {
-  return props.items.reduce((acc, item) => {
-    if (!acc[item.type]) acc[item.type] = []
-    acc[item.type].push(item)
-    return acc
-  }, {})
+const grouped = computed<Partial<Record<SkillTypeEnum, Skill[]>>>(() => {
+  return props.items.reduce<Partial<Record<SkillTypeEnum, Skill[]>>>(
+    (acc, item) => {
+      if (!acc[item.type]) {
+        acc[item.type] = [];
+      }
+
+      acc[item.type]!.push(item);
+      return acc;
+    },
+    {}
+  );
 });
 
 </script>
