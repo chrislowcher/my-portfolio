@@ -285,11 +285,11 @@ function consoleEasterEgg() {
     console.log(
       `%c${"\n".repeat(y)}${frames[i % frames.length]}`,
       `
-        color: #7df9ff;
+        color: #00d5be;
         font-family: monospace;
         font-size: 14px;
         text-shadow:
-          0 0 4px #7df9ff,
+          0 0 4px #00d5be,
           0 0 8px #00eaff;
       `
     );

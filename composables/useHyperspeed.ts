@@ -9,6 +9,11 @@ export const useHyperspeed = () => {
 
   const triggerHyperspeed = () => {
     if (hyperspeedHandler.value) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+
       isHyperspeed.value = true;
 
       hyperspeedHandler.value();
