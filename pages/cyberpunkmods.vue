@@ -46,7 +46,7 @@
                         <div class="relative overflow-hidden pt-16 lg:pt-20">
                             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                                 <div class="flex justify-center">
-                                    <NuxtImg class="mb-[-12%] rounded-xl shadow-2xl ring-2 ring-gray-900/10 shadow-xl ring-white/10" src="images/slomopromo.png" alt="Nexus Mods Site" />
+                                    <img class="mb-[-12%] rounded-xl shadow-2xl ring-2 ring-gray-900/10 shadow-xl ring-white/10" :src="nexusImg" alt="Nexus Mods Site" />
                                 </div>
                             </div>
                         </div>
@@ -61,8 +61,8 @@
 import { useHyperspeed } from '@/composables/useHyperspeed';
 import { ChevronLeftIcon } from '@heroicons/vue/20/solid';
 import { useRouter } from 'vue-router';
+import nexusImg from '~/assets/images/slomopromo.png';
 import type { Stat } from '~/models/stat';
-
 onMounted(() => {
     document.documentElement.style.setProperty('--base-app-color','var(--color-cyber-yellow-500)');
     setTimeout(() => {

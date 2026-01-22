@@ -32,16 +32,10 @@ export default defineNuxtConfig({
       mode: 'out-in'
     }
   },
-
+  ssr: false,
   nitro: {
-    preset: 'static'
+    preset: 'static',
   },
 
   modules: ['@nuxt/image'],
-  image: {
-    provider: 'ipxStatic',
-    ipxStatic: {
-      baseURL: '/my-portfolio/' // Ensure this matches your app.baseURL
-    }
-  }
 })

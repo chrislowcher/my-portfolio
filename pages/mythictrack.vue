@@ -57,7 +57,7 @@
                                 <div class="relative overflow-hidden pt-16 lg:pt-20">
                                     <div class="mx-auto max-w-7xl px-6 lg:px-8">
                                         <div class="flex justify-center">
-                                            <NuxtImg class="mb-[-12%] rounded-xl shadow-2xl ring-2 ring-gray-900/10 shadow-xl ring-white/10" src="images/mt.png" alt="Mythic Track Site" />
+                                            <img class="mb-[-12%] rounded-xl shadow-2xl ring-2 ring-gray-900/10 shadow-xl ring-white/10" :src="mtImg" alt="Mythic Track Site" />
                                         </div>
                                     </div>
                                 </div>
@@ -74,8 +74,8 @@
 import { useHyperspeed } from '@/composables/useHyperspeed';
 import { ArrowTopRightOnSquareIcon, ChevronLeftIcon } from '@heroicons/vue/24/solid';
 import { useRouter } from 'vue-router';
+import mtImg from '~/assets/images/mt.png';
 import type { Stat } from '~/models/stat';
-
 onMounted(() => {
     document.documentElement.style.setProperty('--base-app-color','var(--color-indigo-500)');
     setTimeout(() => {
