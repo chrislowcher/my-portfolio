@@ -8,7 +8,7 @@
         </div>
         <div class="relative isolate overflow-hidden py-24 sm:py-32">
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
+                <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl text-shadow-lg/20">
                     <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Youtube</p>
                     <h2 class="text-base/8 font-semibold text-red-500">Where I post embarassing content</h2>
                     <p class="mt-6 text-lg/8 text-gray-200"> I have enjoyed making videos since I was a kid and it remains a hobby of mine to this day. My favorite vidoes to make are travel vlogs, but I will keep those private. Instead you can enjoy my pandemic adventure into the world of LEGO youtube. </p>

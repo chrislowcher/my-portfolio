@@ -4,7 +4,7 @@
       <div class="absolute -bottom-8 -left-96 -z-10 transform-gpu blur-3xl sm:-bottom-64 sm:-left-40 lg:-bottom-32 lg:left-8 xl:-left-10" aria-hidden="true">
         
       </div>
-      <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl fade-in-down-sm ani-delay-500">
+      <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl fade-in-down-sm ani-delay-500 text-shadow-lg/20">
         <h2 class="text-2xl font-semibold text-teal-400">Chris Lowcher</h2>
         <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">An Experienced Full-Stack Software Engineer</p>
         <p class="mt-6 text-3xl text-slate-200 hidden sm:block">

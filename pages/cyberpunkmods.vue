@@ -8,7 +8,7 @@
         </div>
         <div class="relative isolate overflow-hidden py-24 sm:py-32">
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
+                <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl text-shadow-lg/20">
                     <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Video Game Mods</p>
                     <h2 class="text-base/8 font-semibold text-cyber-yellow-500">Hosted on Nexus Mods</h2>
                     <p class="mt-6 text-lg/8 text-gray-200">As an active member of the Cyberpunk 2077 modding community I have created multiple of my own mods, with two of them getting a fully featured public release. I also help other mod authors test their mods and help players with mod config on the official Discord and Reddit. </p>

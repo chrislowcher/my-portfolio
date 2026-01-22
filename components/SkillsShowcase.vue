@@ -1,7 +1,7 @@
 <template>
     <div class="z-20">
         <div class="relative isolate overflow-hidden py-24 sm:py-32">
-            <div class="relative mx-auto max-w-7xl">
+            <div class="relative mx-auto max-w-7xl text-shadow-lg/20">
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
                     <p class="mt-2 text-3xl font-semibold tracking-tight text-pretty text-white sm:text-4xl">Skills</p>
                     <h2 class="text-base/8 font-semibold text-cyan-500">that pay the bills</h2>

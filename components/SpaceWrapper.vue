@@ -14,29 +14,23 @@ let ctx: any = null;;
 onMounted(() => {
   const { registerHyperspeed } = useHyperspeed();
   registerHyperspeed(triggerHyperspeed);
-
+  
   setTimeout(() => {
-    if (!canvasRef.value) return;
+    if (canvasRef.value) {
+      canvas = canvasRef.value;
 
-    canvas = canvasRef.value;
-    ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    // Attach resize listener
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener("resize", resizeCanvas);
-    } else {
-      window.addEventListener("resize", resizeCanvas);
+      if (canvas) {
+        ctx = canvas.getContext("2d");
+        window.addEventListener("resize", resizeCanvas);
+        // Initialize
+        resizeCanvas();
+        createStars();
+        setTimeout(createShootingStar, Math.random() * 10000 + 10000); // Rare shooting stars
+        animate();
+      }
     }
-
-    // Initialize canvas & stars
-    resizeCanvas();
-    createStars();
-    setTimeout(createShootingStar, Math.random() * 10000 + 10000);
-    animate();
   }, 10);
 });
-
 
 const farStars = ref(0.0);
 const middleStars = ref(-0.01);
@@ -102,37 +96,14 @@ let stars: any = [];
 const layerCount = 3; // 3 layers for parallax
 const baseStarCount = 100; // Base count of stars per layer
 let shootingStar: any = null;
-let lastWidth = 0;
-let lastHeight = 0;
 
+// Resize the canvas
 function resizeCanvas() {
-  if (!canvas || !ctx) return;
-
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-
-  // Ignore small "resizes" caused by mobile scroll / address bar
-  if (Math.abs(width - lastWidth) < 10 && Math.abs(height - lastHeight) < 10) {
-    return;
+  if (canvas) {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
-
-  lastWidth = width;
-  lastHeight = height;
-
-  const dpr = window.devicePixelRatio || 1;
-
-  // CSS size
-  canvas.style.width = `${width}px`;
-  canvas.style.height = `${height}px`;
-
-  // Physical canvas size
-  canvas.width = Math.floor(width * dpr);
-  canvas.height = Math.floor(height * dpr);
-
-  // Normalize drawing
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-  createStars();
+  createStars(); // Recreate stars based on new dimensions
 }
 
 // Create the starfield

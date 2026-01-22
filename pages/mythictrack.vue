@@ -8,7 +8,7 @@
         </div>
         <div class="relative isolate overflow-hidden py-24 sm:py-32">
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl pb-8 lg:mx-0 lg:max-w-xl">
+                <div class="mx-auto max-w-2xl pb-8 lg:mx-0 lg:max-w-xl text-shadow-lg/20">
                     <div class="flex items-end">
                         <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Mythic Track</p>
                         <div v-on:click="routeToMt">

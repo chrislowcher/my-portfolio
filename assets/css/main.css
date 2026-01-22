@@ -2,16 +2,19 @@
 /* @import "tailwindcss-primeui";
 @import 'primeicons/primeicons.css'; */
 
-html{
+html {
     scroll-behavior: smooth;
-}
-
-html, .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
     font-feature-settings: "cv11" !important;
     font-family: theme(--font-inter) !important;
     transition: scrollbar-color 2s ease-in-out;
     scrollbar-color: var(--base-app-color) #000;
     scrollbar-width: thin;
+    background-color: #000;
+}
+
+.odometer.odometer-auto-theme, .odometer.odometer-theme-default {
+    font-feature-settings: "cv11" !important;
+    font-family: theme(--font-inter) !important;
     background-color: transparent;
 }
 
