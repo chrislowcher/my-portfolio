@@ -1,1 +1,0 @@
-import{d as r,x as s,V as t,R as o,y as a}from"./CcP7wxJQ.js";const c=r({__name:"Badge",props:{color:{}},setup(e){return(n,l)=>(a(),s("span",{class:o(`inline-flex items-center rounded-full bg-white/5 backdrop-blur-xs px-2 py-1 text-xs font-medium text-${e.color}-400 ring-1 ring-gray-500/10 ring-inset`)},[t(n.$slots,"default")],2))}});export{c as _};
