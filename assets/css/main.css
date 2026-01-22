@@ -12,7 +12,7 @@ html, .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
     transition: scrollbar-color 2s ease-in-out;
     scrollbar-color: var(--base-app-color) #000;
     scrollbar-width: thin;
-    background-color: #000;
+    background-color: transparent;
 }
 
 .tiny5-regular {
