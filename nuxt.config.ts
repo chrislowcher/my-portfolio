@@ -38,4 +38,10 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxt/image'],
+  image: {
+    provider: 'ipxStatic',
+    ipxStatic: {
+      baseURL: '/my-portfolio/' // Ensure this matches your app.baseURL
+    }
+  }
 })
