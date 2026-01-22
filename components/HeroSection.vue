@@ -4,10 +4,10 @@
       <div class="absolute -bottom-8 -left-96 -z-10 transform-gpu blur-3xl sm:-bottom-64 sm:-left-40 lg:-bottom-32 lg:left-8 xl:-left-10" aria-hidden="true">
         
       </div>
-      <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl fade-in-down-sm ani-delay-500 text-shadow-lg/20">
-        <h2 class="text-2xl font-semibold text-teal-400">Chris Lowcher</h2>
-        <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">An Experienced Full-Stack Software Engineer</p>
-        <p class="mt-6 text-3xl text-slate-200 hidden sm:block">
+      <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl fade-in-down-sm ani-delay-500">
+        <h2 class="text-2xl font-semibold text-teal-400 text-shadow-lg/20">Chris Lowcher</h2>
+        <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl text-shadow-lg/20">An Experienced Full-Stack Software Engineer</p>
+        <p class="mt-6 text-3xl text-slate-200 hidden sm:block text-shadow-lg/20">
           <span class="mr-2">who dabbles in</span>
           <ClientOnly>
             <Transition name="slide-up" mode="out-in">
@@ -17,7 +17,7 @@
             </Transition>
           </ClientOnly>
         </p>
-        <p class="mt-6 text-3xl text-slate-200 sm:hidden">
+        <p class="mt-6 text-3xl text-slate-200 sm:hidden text-shadow-lg/20">
           <span class="mr-2">who dabbles in</span>
           <br class="block sm:hidden" />
           <span class="block sm:inline-block h-[36px] sm:h-auto ">
@@ -33,7 +33,7 @@
         
         <div class="mt-10 flex items-center gap-x-6">
             <a href="https://www.linkedin.com/in/christopher-lowcher/" target="_blank" class="transition duration-200 ease-in-out rounded-md bg-teal-700 px-3.5 py-2.5 text-md font-semibold text-white shadow-xs hover:bg-teal-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 dark:bg-teal-600 dark:hover:bg-teal-500 dark:focus-visible:outline-teal-500">Get in touch</a>
-            <a v-on:click="goToRoute('skills')" class="text-lg/6 font-semibold text-gray-900 text-white cursor-pointer">See all skills <span aria-hidden="true">→</span></a>
+            <a v-on:click="goToRoute('skills')" class="text-shadow-lg/20 text-lg/6 font-semibold text-gray-900 text-white cursor-pointer">See all skills <span aria-hidden="true">→</span></a>
           </div>
       </div>
     </div>

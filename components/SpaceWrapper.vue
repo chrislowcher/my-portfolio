@@ -171,13 +171,32 @@ function drawStars() {
   // gradient.addColorStop(1, "rgba(0, 0, 0, 1)"); // Black at the edges
   ctx.fillStyle = '#000000';
   ctx.fillRect(0, 0, canvas?.width, canvas?.height);
-
+  
   // Draw stars with parallax effect
   stars.forEach((star: any) => {
     ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-    const stretch = star.layer === 0 ? 1 : stretchFactor.value;
-    ctx.fillRect(star.x, star.y, star.size + 1, star.size * stretch);
+    const aspect = canvas.width / canvas.height;
+    // Taller screens → smaller vertical stretch
+    const aspectCorrection = Math.min(1, aspect * 1.2);
+    const verticalCorrection = Math.max(
+        0.4,
+        Math.min(1, getVerticalScaleCorrection())
+      );
+    const stretch = star.layer === 0 ? 1 : stretchFactor.value * aspectCorrection;
+    ctx.fillRect(star.x, star.y, star.size + 1, star.size * stretch * verticalCorrection);
   });
+}
+
+function getVerticalScaleCorrection() {
+  if (!canvas) return 1;
+
+  const cssHeight = canvas.offsetHeight;
+  const bufferHeight = canvas.height;
+
+  if (!bufferHeight) return 1;
+
+  // How much the browser is stretching the canvas vertically
+  return bufferHeight / cssHeight;
 }
 
 // Initialize a shooting star
