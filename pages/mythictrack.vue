@@ -34,7 +34,7 @@
                             <div class="backdrop-blur-xs bg-white/5 py-8 sm:py-12">
                                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                                     <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                                        <p class="text-base/7 font-semibold text-indigo-600 dark:text-indigo-500">From the kitchen table</p>
+                                        <p class="text-base/7 font-semibold text-indigo-600 dark:text-indigo-500">from the kitchen table</p>
                                         <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">To Commander Players Across the Globe</h1>
                                         <div class="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base/7 text-gray-700 lg:max-w-none lg:grid-cols-2 dark:text-gray-300">
                                         <div>

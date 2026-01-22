@@ -23,7 +23,7 @@
                     <div class="py-8 sm:py-12 backdrop-blur-xs rounded-2xl bg-white/5 [mask-image:linear-gradient(to_bottom,black_86%,transparent_96%)] overflow-hidden">
                         <div class="mx-auto max-w-7xl px-6 lg:px-8">
                             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                                <p class="text-base/7 font-semibold text-cyber-yellow-600 dark:text-cyber-yellow-500">Exploring a new world</p>
+                                <p class="text-base/7 font-semibold text-cyber-yellow-600 dark:text-cyber-yellow-500">expanding my horizons</p>
                                 <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">Beyond Night City</h1>
                                 <div class="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base/7 text-gray-700 lg:max-w-none lg:grid-cols-2 dark:text-gray-300">
                                     <div>
