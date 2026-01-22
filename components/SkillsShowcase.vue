@@ -5,7 +5,7 @@
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
                     <p class="mt-2 text-3xl font-semibold tracking-tight text-pretty text-white sm:text-4xl">Skills</p>
                     <h2 class="text-base/8 font-semibold text-cyan-500">that pay the bills</h2>
-                    <p class="mt-6 text-lg/8 text-gray-300">Here are all of my skills related to digital technology and creativty. Outside of these listed skills, I am an avid golfer, skateboarder, and snowboarder. I also have some pretty sweet LEGO building skills.</p>
+                    <p class="mt-6 text-lg/8 text-gray-200">Here are all of my skills related to digital technology and creativty. Outside of these listed skills, I am an avid golfer, skateboarder, and snowboarder. I also have some pretty sweet LEGO building skills.</p>
                 </div>
             </div>
         </div>

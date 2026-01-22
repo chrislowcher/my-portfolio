@@ -11,7 +11,7 @@
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
                     <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Youtube</p>
                     <h2 class="text-base/8 font-semibold text-red-500">Where I post embarassing content</h2>
-                    <p class="mt-6 text-lg/8 text-gray-300"> I have enjoyed making videos since I was a kid and it remains a hobby of mine to this day. My favorite vidoes to make are travel vlogs, but I will keep those private. Instead you can enjoy my pandemic adventure into the world of LEGO youtube. </p>
+                    <p class="mt-6 text-lg/8 text-gray-200"> I have enjoyed making videos since I was a kid and it remains a hobby of mine to this day. My favorite vidoes to make are travel vlogs, but I will keep those private. Instead you can enjoy my pandemic adventure into the world of LEGO youtube. </p>
                     <div class="flex gap-1 mt-2">
                         <UiBadge color="red">Shotcut</UiBadge>
                         <UiBadge color="red">OBS</UiBadge>
@@ -24,9 +24,9 @@
                     <div class="py-8 sm:py-12 backdrop-blur-xs rounded-2xl ring-1 ring-white/10 ring-inset bg-white/5 [mask-image:linear-gradient(to_bottom,black_86%,transparent_96%)]">
                         <div class="mx-auto max-w-7xl px-6 lg:px-8">
                             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                                <p class="text-base/7 font-semibold text-red-600 dark:text-red-500">exploring a new world</p>
-                                <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">Brick by Brick</h1>
-                                <div class="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base/7 text-gray-700 lg:max-w-none lg:grid-cols-2 dark:text-gray-300">
+                                <p class="text-base/7 font-semibold text-red-500">exploring a new world</p>
+                                <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl text-white">Brick by Brick</h1>
+                                <div class="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base/7 text-gray-200 lg:max-w-none lg:grid-cols-2">
                                     <div>
                                         <p> Ok, we all remember 2020 right? We all maybe did some slightly embarassing stuff. We all certainly took up new hobby or rediscovered old ones. </p>
                                         <p class="mt-8"> For me, it was LEGO. Growing up I was obsessed with LEGO and I was constantly building new ideas, taking apart sets and making new creations.  </p>
@@ -38,8 +38,8 @@
                                     </div>
                                 </div>
                                 <div class="mt-10 flex items-center gap-4">
-                                    <a href="https://www.youtube.com/@clowchbricks2743" target="_blank" class="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 dark:bg-red-500 dark:hover:bg-red-400 dark:focus-visible:outline-red-500">Check out my videos</a>
-                                    <a href="https://www.instagram.com/clowchbricks" class="text-md/6 font-semibold text-gray-900 dark:text-white cursor-pointer">More Content on Instagram <span aria-hidden="true">→</span></a>
+                                    <a href="https://www.youtube.com/@clowchbricks2743" target="_blank" class="transition duration-200 ease-in-out rounded-md px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 bg-red-500 hover:bg-red-400 focus-visible:outline-red-500">Check out my videos</a>
+                                    <a href="https://www.instagram.com/clowchbricks" class="text-md/6 font-semibold text-white cursor-pointer">More Content on Instagram <span aria-hidden="true">→</span></a>
                                 </div>
                             </div>
                         </div>

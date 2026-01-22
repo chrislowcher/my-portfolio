@@ -33,7 +33,7 @@
         
         <div class="mt-10 flex items-center gap-x-6">
             <a href="https://www.linkedin.com/in/christopher-lowcher/" target="_blank" class="transition duration-200 ease-in-out rounded-md bg-teal-700 px-3.5 py-2.5 text-md font-semibold text-white shadow-xs hover:bg-teal-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 dark:bg-teal-600 dark:hover:bg-teal-500 dark:focus-visible:outline-teal-500">Get in touch</a>
-            <a v-on:click="goToRoute('skills')" class="text-lg/6 font-semibold text-gray-900 dark:text-white cursor-pointer">See all skills <span aria-hidden="true">→</span></a>
+            <a v-on:click="goToRoute('skills')" class="text-lg/6 font-semibold text-gray-900 text-white cursor-pointer">See all skills <span aria-hidden="true">→</span></a>
           </div>
       </div>
     </div>
